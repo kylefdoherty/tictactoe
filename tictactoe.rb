@@ -15,20 +15,62 @@
 		# I'm probably going to need to use an array inside an array or hash inside an array or something like this 
 		# Looking into how I can print out an empty board with nested array
 
-		board = [[' ', '|', ' ', '|', ' '], ['--','--','--','--','-'], [' ', '|', ' ', '|', ' '], ['--','--','--','--','-'], [' ', '|', ' ', '|', ' ']]
+	
 
-		line_width = 50
-		puts board[0].join.center(line_width) #remembered the part in Chris Pine's book about visual formatting 
-		puts board[1].join.center(line_width)
-		puts board[2].join.center(line_width)
-		puts board[3].join.center(line_width)
-		puts board[4].join.center(line_width)
+		@board = [[' ', '|', ' ', '|', ' '], ['--','--','--','--','-'], [' ', '|', ' ', '|', ' '], ['--','--','--','--','-'], [' ', '|', ' ', '|', ' ']]
+
+
+	def show_board
+		@line_width = 50
+		puts @board[0].join.center(@line_width) #remembered the part in Chris Pine's book about visual formatting 
+		puts @board[1].join.center(@line_width)
+		puts @board[2].join.center(@line_width)
+		puts @board[3].join.center(@line_width)
+		puts @board[4].join.center(@line_width)
+	end
+
+		
+	
 
 
 
 #2 - puts the board empty board and ask player 1 to make first move 
 
-		puts "Player 1, make the first move by selecting the row (0-2) and column (0-2)"
+	
+
+	# def convert input #method to covert players input in appropriate array index
+	# 		case input
+	# 		when 1
+	# 			input = 0
+	# 		when 3
+	# 			input = 4
+	# 		end
+
+	# 	end
+		
+
+###### method to add move to board and print board ######
+	def addmove(row, col)
+
+		@board[row][col]="X"
+
+		show_board
+
+		# puts @board[0].join.center(@line_width) #remembered the part in Chris Pine's book about visual formatting 
+		# puts @board[1].join.center(@line_width)
+		# puts @board[2].join.center(@line_width)
+		# puts @board[3].join.center(@line_width)
+		# puts @board[4].join.center(@line_width) 
+
+	end
+
+
+		
+		show_board
+
+	9.times do 
+
+		puts "Make your move by selecting the row (0-2) and column (0-2)"
 		puts "Select the row:"
 
 		row = gets.chomp.to_i
@@ -37,14 +79,21 @@
 
 		col = gets.chomp.to_i
 
+		addmove(row,col)
 
-		board[row][col]="X"
+	end 
 
-		puts board[0].join.center(line_width) #remembered the part in Chris Pine's book about visual formatting 
-		puts board[1].join.center(line_width)
-		puts board[2].join.center(line_width)
-		puts board[3].join.center(line_width)
-		puts board[4].join.center(line_width) 
+
+
+	
+
+
+
+
+
+
+
+
 	
 
 		
