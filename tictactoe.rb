@@ -15,7 +15,7 @@
 		# I'm probably going to need to use an array inside an array or hash inside an array or something like this 
 		# Looking into how I can print out an empty board with nested array
 
-		board = [[' ', '|', ' ', '|', ' '], ['--','--','--','--'], [4, '|', 5, '|', 6], ['--','--','--','--'], [7, '|', 8, '|', 9]]
+		board = [[' ', '|', ' ', '|', ' '], ['--','--','--','--','-'], [' ', '|', ' ', '|', ' '], ['--','--','--','--','-'], [' ', '|', ' ', '|', ' ']]
 
 		line_width = 50
 		puts board[0].join.center(line_width) #remembered the part in Chris Pine's book about visual formatting 
@@ -27,6 +27,27 @@
 
 
 #2 - puts the board empty board and ask player 1 to make first move 
+
+		puts "Player 1, make the first move by selecting the row (0-2) and column (0-2)"
+		puts "Select the row:"
+
+		row = gets.chomp.to_i
+
+		puts "Please the column:"
+
+		col = gets.chomp.to_i
+
+
+		board[row][col]="X"
+
+		puts board[0].join.center(line_width) #remembered the part in Chris Pine's book about visual formatting 
+		puts board[1].join.center(line_width)
+		puts board[2].join.center(line_width)
+		puts board[3].join.center(line_width)
+		puts board[4].join.center(line_width) 
+	
+
+		
 #3 - take players input and add it to the appropriate place on the board (hash)
 #4 - puts out the updated board 
 #5 - ask player 2 to make second move 
