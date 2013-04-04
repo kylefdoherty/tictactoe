@@ -10,6 +10,22 @@
 ##### Steps ######
 
 #1 - create a board that can hold Xs and Os - hash or array
+
+
+		# I'm probably going to need to use an array inside an array or hash inside an array or something like this 
+		# Looking into how I can print out an empty board with nested array
+
+		board = [[' ', '|', ' ', '|', ' '], ['--','--','--','--'], [4, '|', 5, '|', 6], ['--','--','--','--'], [7, '|', 8, '|', 9]]
+
+		line_width = 50
+		puts board[0].join.center(line_width) #remembered the part in Chris Pine's book about visual formatting 
+		puts board[1].join.center(line_width)
+		puts board[2].join.center(line_width)
+		puts board[3].join.center(line_width)
+		puts board[4].join.center(line_width)
+
+
+
 #2 - puts the board empty board and ask player 1 to make first move 
 #3 - take players input and add it to the appropriate place on the board (hash)
 #4 - puts out the updated board 
