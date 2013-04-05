@@ -50,23 +50,42 @@
 		
 
 ###### method to add move to board and print board ######
-	def addmove(row, col)
+	def addmove move
 
 		#convert the inputs of the player to valid moves on the board
-		if row == 1
+	row = ""
+	col = ""
+		
+		case move
+		when 1
 			row = 0
-		elsif row == 3
-			row = 4
-		end
-
-		if col == 1 #find way to not have to duplicate this code later
 			col = 0
-		elsif col == 3
+		when 2
+			row = 0
+			col = 2
+		when 3 
+			row = 0
 			col = 4
-		end
+		when 4
+			row = 2
+			col = 0 
+		when 5
+			row = 2
+			col = 2
+		when 6
+			row = 2
+			col = 4
+		when 7
+			row = 4
+			col = 0
+		when 8
+			row = 4
+			col = 2
+		when 9
+			row = 4
+			col = 4
+		end   
 
-		puts row
-		puts col
 
 		@board[row][col]="X"
 
@@ -86,16 +105,23 @@
 
 	9.times do 
 
-		puts "Make your move by selecting the row (0-2) and column (0-2)"
-		puts "Select the row:"
+		# puts "Make your move by selecting the row (0-2) and column (0-2)"
+		# puts "Select the row:"
 
-		row = gets.chomp.to_i
+		puts 'Make your move by selecting a space on the board 1-9.  They are numbered left to right.'
+		puts 'Make your move:'
 
-		puts "Please the column:"
+		move = gets.chomp.to_i
 
-		col = gets.chomp.to_i
+		# row = gets.chomp.to_i
 
-		addmove(row,col)
+		# puts "Please the column:"
+
+		# col = gets.chomp.to_i
+
+		# addmove(row,col)
+
+		addmove move
 
 	end 
 
