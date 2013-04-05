@@ -52,6 +52,22 @@
 ###### method to add move to board and print board ######
 	def addmove(row, col)
 
+		#convert the inputs of the player to valid moves on the board
+		if row == 1
+			row = 0
+		elsif row == 3
+			row = 4
+		end
+
+		if col == 1 #find way to not have to duplicate this code later
+			col = 0
+		elsif col == 3
+			col = 4
+		end
+
+		puts row
+		puts col
+
 		@board[row][col]="X"
 
 		show_board
