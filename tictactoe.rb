@@ -50,7 +50,7 @@
 		
 
 ###### method to add move to board and print board ######
-	def addmove move
+	def addmove(move, player)
 
 		#convert the inputs of the player to valid moves on the board
 	row = ""
@@ -87,7 +87,7 @@
 		end   
 
 
-		@board[row][col]="X"
+		@board[row][col]= player
 
 		show_board
 
@@ -103,13 +103,24 @@
 		
 		show_board
 
-	9.times do 
+	9.times do |x|
+
+		player = ""
+
+		if x % 2 == 0
+			puts "Player One make your move:"
+			player = "X"
+		else
+			puts "Player Two make your move:"
+			player = "O"
+		end
+
 
 		# puts "Make your move by selecting the row (0-2) and column (0-2)"
 		# puts "Select the row:"
 
-		puts 'Make your move by selecting a space on the board 1-9.  They are numbered left to right.'
-		puts 'Make your move:'
+		# puts 'Make your move by selecting a space on the board 1-9.  They are numbered left to right.'
+		# puts 'Make your move:'
 
 		move = gets.chomp.to_i
 
@@ -121,7 +132,7 @@
 
 		# addmove(row,col)
 
-		addmove move
+		addmove(move, player)
 
 	end 
 
